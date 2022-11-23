@@ -135,6 +135,9 @@ public class EduTeacherController {
             wrapper.le("gmt_modified", end);
         }
 
+        //排序
+        wrapper.orderByDesc("gmt_create");
+
         eduTeacherService.page(pageTeacher, wrapper);
 
         return R.ok().data("total", pageTeacher.getTotal()).data("rows", pageTeacher.getRecords());
